@@ -1,2 +1,9 @@
+<button class="btn btn-primary" [disabled]="allowNewServer" (click)="getServerStatus()">
+    Add Server
+</button>
+<!--p [innerText]="allowNewServer"></p-->
+<!--p>{{}}</p-->
+<hr>
+<p>{{serverStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>
