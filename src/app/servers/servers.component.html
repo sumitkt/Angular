@@ -16,7 +16,7 @@
 <!-- <p>{{UserName}}</p> -->
 
 <button class="btn btn-primary" [disabled]="!serverName" (click)="getServerStatus()">
-Add User  
+Add Server  
 </button> 
 <!-- <hr> -->
 <!-- <p>{{serverName}}</p> -->
@@ -27,5 +27,16 @@ Add User
 <!--p>{{}}</p-->
 <hr>
 <p *ngIf="serverCreated">{{serverStatus}}</p>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+
+
+<button class="btn btn-primary"  (click)="CountClicks()">Display Details</button>
+<p *ngIf="showSecret">Secret Password= 'tuna'</p>
+
+<div *ngFor="let click of ListOfClicks" [ngStyle]="{backgroundColor:click>=5?'blue':'transparent'}"
+[ngClass]="{'white-text':click >=5}">
+{{click}}
+</div>
+
+
+
