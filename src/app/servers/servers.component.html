@@ -1,9 +1,31 @@
-<button class="btn btn-primary" [disabled]="allowNewServer" (click)="getServerStatus()">
+<label>Server Name </label>
+<!--input type="text" class="form-control"
+
+(input)="onUpdateServerName($event)"
+-->
+<input type="text" class="form-control" 
+
+[(ngModel)]="serverName"
+>
+
+<!-- <input type="text" class="form-control"
+
+[(ngModel)]="UserName"
+>  -->
+
+<!-- <p>{{UserName}}</p> -->
+
+<button class="btn btn-primary" [disabled]="!serverName" (click)="getServerStatus()">
+Add User  
+</button> 
+<!-- <hr> -->
+<!-- <p>{{serverName}}</p> -->
+<!-- <button class="btn btn-primary" [disabled]="allowNewServer" (click)="getServerStatus()">
     Add Server
-</button>
+</button> -->
 <!--p [innerText]="allowNewServer"></p-->
 <!--p>{{}}</p-->
 <hr>
-<p>{{serverStatus}}</p>
+<p *ngIf="serverCreated">{{serverStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>
